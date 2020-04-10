@@ -60,7 +60,7 @@ while(not sync):
 
 	sync_history.append(score) # Add sync score to history, so that we can plot a graph later.
 
-	sys.stdout.write('\r' + "Synchronization = " + str(int(score)) + "%   /  Updates = " + str(nb_updates) + " / Eve's updates = " + str(nb_eve_updates)) 
+	sys.stdout.write('\r' + "Synchronization = " + str(int(score)) + "%   /  Updates = " + str(nb_updates) + " / Eve's updates = " + str(nb_eve_updates))
 	if score == 100: # If synchronization score is 100%, set sync flag = True
 		sync = True
 
@@ -77,9 +77,12 @@ eve_score = 100 * int(sync_score(Alice, Eve))
 if eve_score > 100:
 	print("Oops! Nosy Eve synced her machine with Alice's and Bob's !")
 else:
-	print("Eve's machine is only " + str(eve_score) + " % " + "synced with Alice's and Bob's and she did " + str(nb_eve_updates) + " updates.") 
+	print("Eve's machine is only " + str(eve_score) + " % " + "synced with Alice's and Bob's and she did " + str(nb_eve_updates) + " updates.")
 
-#Plot graph 
+#Plot graph
 import matplotlib.pyplot as mpl
 mpl.plot(sync_history)
+mpl.xlabel('No of updates')
+mpl.ylabel('Perecentage of Synchronization')
+mpl.title('Visual for updates vs synchronization')
 mpl.show()
