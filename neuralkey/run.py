@@ -16,7 +16,7 @@ update_rule = update_rules[0]
 
 #Create 3 machines : Alice, Bob and Eve. Eve will try to intercept the communication between
 #Alice and Bob.
-print("Creating machines : k=" + str(k) + ", n=" + str(n) + ", l=" + str(n))
+print("Creating machines : k=" + str(k) + ", n=" + str(n) + ", l=" + str(l))
 print("Using " + update_rule + " update rule.")
 Alice = Machine(k, n, l)
 Bob = Machine(k, n, l)
